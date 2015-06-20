@@ -17,6 +17,11 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component", {
 //		var oModel = new sap.ui.model.odata.ODataModel(url, true, "<user>", "<password>");
 //		oView.setModel(oModel);
 
+		
+		// set i18n model - in excise 1
+		var i18nModel = new sap.ui.model.resource.ResourceModel({ bundleUrl : "i18n/messageBundle.properties" }); 
+		oView.setModel(i18nModel, "i18n");
+		
 		// Using a local model for offline development
 		var oModel = new sap.ui.model.json.JSONModel("model/mock.json");
 		oView.setModel(oModel);
