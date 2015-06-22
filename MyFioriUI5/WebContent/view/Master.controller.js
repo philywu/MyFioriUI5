@@ -17,5 +17,9 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 		var list = this.getView().byId("list");
 		var binding = list.getBinding("items");
 		binding.filter(filters);
+	},
+	handleListSelect : function(evt) {
+		var context = evt.getParameter("listItem").getBindingContext();
+		this.nav.to("Detail", context);
 	}
 });
