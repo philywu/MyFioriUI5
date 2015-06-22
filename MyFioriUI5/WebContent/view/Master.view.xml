@@ -1,21 +1,29 @@
 <core:View controllerName="sap.ui.demo.myFiori.view.Master"
 	xmlns="sap.m" xmlns:core="sap.ui.core">
 	<Page title="{i18n>MasterTitle}">
-		<List items="{/SalesOrderCollection}">
-			
+		<subHeader>
+			<Bar>
+				<contentLeft>
+					<SearchField search="handleSearch" width="100%">
+					</SearchField>
+				</contentLeft>
+			</Bar>
+		</subHeader>
+		<List id="list" items="{/SalesOrderCollection}">
+
 			<ObjectListItem type="Active" press="handleListItemPress"
 				title="{SoId}" number="{GrossAmount}" numberUnit="{CurrencyCode}">
 				<attributes>
 					<ObjectAttribute text="{BuyerName}" />
 				</attributes>
 				<firstStatus>
-					<ObjectStatus text="{ 
+					<ObjectStatus
+						text="{ 
 									path: 'LifecycleStatus', 
-									formatter: 'sap.ui.demo.myFiori.util.Formatter.statusText' }" 
-								state="{ 
+									formatter: 'sap.ui.demo.myFiori.util.Formatter.statusText' }"
+						state="{ 
 									path: 'LifecycleStatus', 
-									formatter: 'sap.ui.demo.myFiori.util.Formatter.statusState' }" 
-					/>
+									formatter: 'sap.ui.demo.myFiori.util.Formatter.statusState' }" />
 				</firstStatus>
 			</ObjectListItem>
 		</List>
