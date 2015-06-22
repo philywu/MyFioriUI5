@@ -23,5 +23,12 @@ sap.ui.demo.myFiori.util.Formatter = {
 		} else {
 			return value;
 		}
+	},
+	quantity : function(value) {
+		try {
+			return (value) ? parseFloat(value).toFixed(0) : value;
+		} catch (err) {
+			return "Not-A-Number";
+		}
 	}
 };
