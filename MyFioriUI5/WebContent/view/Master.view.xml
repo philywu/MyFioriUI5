@@ -9,7 +9,13 @@
 					<ObjectAttribute text="{BuyerName}" />
 				</attributes>
 				<firstStatus>
-					<ObjectStatus text="{LifecycleStatus}" />
+					<ObjectStatus text="{ 
+									path: 'LifecycleStatus', 
+									formatter: 'sap.ui.demo.myFiori.util.Formatter.statusText' }" 
+								state="{ 
+									path: 'LifecycleStatus', 
+									formatter: 'sap.ui.demo.myFiori.util.Formatter.statusState' }" 
+					/>
 				</firstStatus>
 			</ObjectListItem>
 		</List>
