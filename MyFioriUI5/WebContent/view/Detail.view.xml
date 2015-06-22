@@ -1,5 +1,5 @@
 <core:View controllerName="sap.ui.demo.myFiori.view.Detail"
-	xmlns="sap.m" xmlns:core="sap.ui.core">
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form">
 	<Page title="{i18n>DetailTitle}" showNavButton="{device>/isPhone}"
 		navButtonPress="handleNavButtonPress">
 		<ObjectHeader title="{SoId}" number="{GrossAmount}"
@@ -7,18 +7,35 @@
 			<attributes>
 				<ObjectAttribute text="{BuyerName}" />
 				<ObjectAttribute text="{CreatedByBp}" />
-				<ObjectAttribute text="{ path: 'CreatedAt', formatter: 'sap.ui.demo.myFiori.util.Formatter.date' }" />
+				<ObjectAttribute
+					text="{ path: 'CreatedAt', formatter: 'sap.ui.demo.myFiori.util.Formatter.date' }" />
 			</attributes>
 			<firstStatus>
-				<ObjectStatus text="{ 
+				<ObjectStatus
+					text="{ 
 								path: 'LifecycleStatus', 
 								formatter: 'sap.ui.demo.myFiori.util.Formatter.statusText' 
-								}" 
-							state="{ 
+								}"
+					state="{ 
 								path: 'LifecycleStatus', 
 								formatter: 'sap.ui.demo.myFiori.util.Formatter.statusState' 
 								}" />
 			</firstStatus>
 		</ObjectHeader>
+		<IconTabBar expanded="{device>/isNoPhone}">
+			<items>
+				<IconTabFilter icon="sap-icon://supplier">
+					<form:SimpleForm id="SupplierForm" minWidth="1024">
+						<core:Title text="Address" />
+						<Label text="Name" />
+						<Text text="{CompanyName}" />
+						<Label text="City" />
+						<Text text="{City}, {PostalCode}" />
+						<Label text="Street" />
+						<Text text="{Street}" />
+					</form:SimpleForm>
+				</IconTabFilter>
+			</items>
+		</IconTabBar>
 	</Page>
 </core:View>
