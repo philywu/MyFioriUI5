@@ -9,10 +9,8 @@
 				</contentLeft>
 			</Bar>
 		</subHeader>
-		<List id="list" 
-		mode="{device>/listMode}"
-		select="handleListSelect"
-		items="{/SalesOrderCollection}">
+		<List id="list" mode="{device>/listMode}" select="handleListSelect"
+			items="{/SalesOrderCollection}">
 
 			<ObjectListItem type="{device>/listItemType}" press="handleListItemPress"
 				title="{SoId}" number="{GrossAmount}" numberUnit="{CurrencyCode}">
@@ -30,6 +28,9 @@
 				</firstStatus>
 			</ObjectListItem>
 		</List>
-
+		<footer>
+			<Bar>
+			</Bar>
+		</footer>
 	</Page>
 </core:View>
